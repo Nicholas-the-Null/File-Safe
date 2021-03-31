@@ -39,9 +39,20 @@ system("") #for colored console
 
 
 while True:
-    scelta=int(input(style.GREEN +"1-EN,2-DE,3-EXIT,4-SCREEN CLEAN"))
+
+    while True:
+        try:
+            scelta=int(input(style.GREEN +"1-EN,2-DE,3-EXIT,4-SCREEN CLEAN "))
+            break
+        except ValueError:
+            print(style.RED+"error string in input")
+            print(style.WHITE)
+
+
     print(style.WHITE)
-    try:
+   
+
+    try:    
         if scelta==1:
             while True:
                 file=input("File name ")
@@ -116,10 +127,11 @@ while True:
         else:
             print(style.RED+"error")
             print(style.WHITE)
-
-    except ValueError:
-        print(style.RED+"error string in input")
+    except Exception as e:
+        print(style.RED+str(e))
         print(style.WHITE)
+
+    
 
 
 
